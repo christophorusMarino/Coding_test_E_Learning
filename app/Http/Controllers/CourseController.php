@@ -43,4 +43,20 @@ class CourseController extends Controller
 
         return $course;
     }
+
+    public function enrollStudent(Request $request, $id)
+    {
+        $user = $request->user();
+        $enroll = $this->courseService->enroll($user, $id);
+
+        return $enroll;
+    }
+
+    public function studentCourseList(Request $request)
+    {
+        $user = $request->user();
+        $data = $this->courseService->listEnroll($user);
+
+        return ApiResponseClass::successResponse($data, 'Success');
+    }
 }

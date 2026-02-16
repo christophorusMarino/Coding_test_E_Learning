@@ -32,7 +32,10 @@ Route::prefix('v1')->group(function () {
     // END ROLE ROUTE DOSEN
 
     // ROLE ROUTE MAHASISWA
-    Route::middleware(['auth:sanctum', 'role:M'])->group(function () {});
+    Route::middleware(['auth:sanctum', 'role:M'])->group(function () {
+        Route::get('/courses/student', [CourseController::class, 'studentCourseList']);
+        Route::post('/courses/{id}/enroll', [CourseController::class, 'enrollStudent']);
+    });
     // END ROLE ROUTE MAHASISWA
 
     // END AUTH ROUTE

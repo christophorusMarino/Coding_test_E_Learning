@@ -30,7 +30,7 @@ class JsonExceptionRenderer
 
             $e instanceof NotFoundHttpException => response()->json([
                 'success' => false,
-                'message' => 'Endpoint tidak ditemukan.',
+                'message' => 'Data tidak ditemukan.',
             ], 404),
 
             $e instanceof ValidationException => response()->json([

@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\MaterialController;
+use App\Http\Controllers\SubmissionController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function () {
@@ -33,6 +35,14 @@ Route::prefix('v1')->group(function () {
 
         //MATERI
         Route::post('/materials', [MaterialController::class, 'uploadData']);
+
+        //ASSIGNMENT
+        Route::get('/course/{courseId}/assignment', [AssignmentController::class, 'list']);
+        Route::post('/assignments', [AssignmentController::class, 'addData']);
+
+        //SUBMISSION
+        Route::get('/submissions/{id}', [SubmissionController::class, 'downloadData']);
+        Route::post('/submissions/{id}/score', [SubmissionController::class, 'gradeSubmission']);
     });
     // END ROLE ROUTE DOSEN
 
@@ -44,6 +54,9 @@ Route::prefix('v1')->group(function () {
 
         //MATERI
         Route::get('/materials/{id}/download', [MaterialController::class, 'downloadData']);
+
+        //SUBMISSION
+        Route::post('/submissions', [SubmissionController::class, 'uploadData']);
     });
     // END ROLE ROUTE MAHASISWA
 

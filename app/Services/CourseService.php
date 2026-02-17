@@ -10,7 +10,7 @@ class CourseService
 {
     public function getData()
     {
-        return Course::with('lecturer:id,name,email')->get();
+        return Course::with(['lecturer:id,name,email', 'materials:id,course_id,title,file_path'])->get();
     }
 
     public function create(array $data, int $lecturerId)
@@ -61,6 +61,6 @@ class CourseService
 
     public function listEnroll(object $user)
     {
-        return $user->courseEnrolled()->with('lecturer:id,name,email')->get();
+        return $user->courseEnrolled()->with(['lecturer:id,name,email', 'materials:id,course_id,title,file_path'])->get();
     }
 }

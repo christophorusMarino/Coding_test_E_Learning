@@ -2,4 +2,11 @@
 
 ## About
 Coding test untuk melamar prosisi Programmer di PT. Garuda Cyber Indonesia<br>
-Stack: Laravel 11
+Stack: Laravel 11, PHP 8.3, MySql DB<br>
+Arsitektur: Controller -> Service -> Model<br>
+Mail: mailtrap.io<br><br>
+
+## API Endpoint
+
+
+

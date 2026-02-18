@@ -7,6 +7,24 @@ Arsitektur: Controller -> Service -> Model<br>
 Mail: mailtrap.io<br><br>
 
 ## API Endpoint
+- Public Route -
+<table>
+        <tr>
+            <th>METHOD</th>
+            <th>END POINT</th>
+            <th>KET</th>
+        </tr>
+    <tr>
+        <td>POST</td>
+        <td>v1/register</td>
+        <td>Untuk register user</td>
+    </tr>
+    <tr>
+        <td>POST</td>
+        <td>v1/login</td>
+        <td>Untuk Login</td>
+    </tr>
+</table>
 
 
 

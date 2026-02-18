@@ -6,6 +6,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\DiscussionController;
 use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\RepliesController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\SubmissionController;
 use Illuminate\Support\Facades\Route;
 
@@ -51,6 +52,11 @@ Route::prefix('v1')->group(function () {
         //SUBMISSION
         Route::get('/submissions/{id}', [SubmissionController::class, 'downloadData']);
         Route::post('/submissions/{id}/score', [SubmissionController::class, 'gradeSubmission']);
+
+        //REPORT
+        Route::get('/reports/courses', [ReportController::class, 'reportCourse']);
+        Route::get('/reports/assignments', [ReportController::class, 'reportAssignment']);
+        Route::get('/reports/students/{id}', [ReportController::class, 'studentReport']);
     });
     // END ROLE ROUTE DOSEN
 

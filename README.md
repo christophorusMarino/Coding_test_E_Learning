@@ -5,6 +5,7 @@ Coding test untuk melamar prosisi Programmer di PT. Garuda Cyber Indonesia<br>
 Stack: Laravel 11, PHP 8.3, MySql DB<br>
 Arsitektur: Controller -> Service -> Model<br>
 Mail: mailtrap.io<br><br>
+Websocket: Laravel Reverb<br>
 
 ## API Endpoint
 - Public Route
@@ -102,6 +103,21 @@ Mail: mailtrap.io<br><br>
           <td>POST</td>
           <td>v1/submissions/{id}/score</td>
           <td>Memberi nilai pada Tugas mahasiswa</td>
+      </tr>
+      <tr>
+          <td>GET</td>
+          <td>v1/reports/courses</td>
+          <td>Menampilkan laporan jumlah mahasiswa Course yang diampu</td>
+      </tr>
+      <tr>
+          <td>GET</td>
+          <td>v1/reports/assignments</td>
+          <td>Menampilkan laporan penilaian tugas dari Course yang diampu</td>
+      </tr>
+      <tr>
+          <td>GET</td>
+          <td>v1/reports/students/{id}</td>
+          <td>Menampilkan statistik tugas dan nilai mahasiswa tertentu</td>
       </tr>
   </table>
 

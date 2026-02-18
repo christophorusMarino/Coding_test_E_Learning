@@ -3,7 +3,9 @@
 use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\DiscussionController;
 use App\Http\Controllers\MaterialController;
+use App\Http\Controllers\RepliesController;
 use App\Http\Controllers\SubmissionController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +26,12 @@ Route::prefix('v1')->group(function () {
 
         //COURSE
         Route::get('/courses', [CourseController::class, 'list']);
+
+        //DISCUSSION
+        Route::get('/discussions/course/{idCourse}', [DiscussionController::class, 'list']);
+        Route::post('/discussions', [DiscussionController::class, 'addData']);
+        //REPLIES
+        Route::post('/discussions/{id}/replies', [RepliesController::class, 'addData']);
     });
 
     // ROLE ROUTE DOSEN

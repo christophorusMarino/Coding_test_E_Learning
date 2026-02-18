@@ -14,7 +14,11 @@ class CourseService
             [
                 'lecturer:id,name,email',
                 'materials:id,course_id,title,file_path',
-                'assignment:id,course_id,title,description,deadline'
+                'assignment:id,course_id,title,description,deadline',
+                'discussions:id,course_id,user_id,content',
+                'discussions.user:id,name,role',
+                'discussions.replies:id,discussion_id,user_id,content',
+                'discussions.replies.user:id,name,role'
             ]
         )->get();
     }
@@ -71,7 +75,11 @@ class CourseService
             [
                 'lecturer:id,name,email',
                 'materials:id,course_id,title,file_path',
-                'assignment:id,course_id,title,description,deadline'
+                'assignment:id,course_id,title,description,deadline',
+                'discussions:id,course_id,user_id,content',
+                'discussions.user:id,name,role',
+                'discussions.replies:id,discussion_id,user_id,content',
+                'discussions.replies.user:id,name,role'
             ]
         )->get();
     }
